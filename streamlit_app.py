@@ -212,18 +212,22 @@ def generate_template_excel():
 # =====================
 # TEMPLATE CARD
 # =====================
-st.markdown('<div class="center-wrapper">', unsafe_allow_html=True)
-st.markdown('<div class="card center-card">', unsafe_allow_html=True)
+col1, col2, col3 = st.columns([1,2,1])
 
-st.subheader("📥 Download Template Excel")
-st.write("Gunakan template ini agar format sesuai sistem prediksi.")
+with col2:
+    st.markdown('<div class="card">', unsafe_allow_html=True)
 
-st.download_button(
-    "📊 Download Template Excel Prediksi",
-    data=generate_template_excel(),
-    file_name="template_prediksi_kelulusan.xlsx",
-    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-)
+    st.subheader("📥 Download Template Excel")
+    st.write("Gunakan template ini agar format sesuai sistem prediksi.")
+
+    st.download_button(
+        "📊 Download Template Excel Prediksi",
+        data=generate_template_excel(),
+        file_name="template_prediksi_kelulusan.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
+
+    st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
@@ -367,6 +371,7 @@ Sistem Prediksi Kelulusan Siswa <br>
 Streamlit • XGBoost • 2026
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
