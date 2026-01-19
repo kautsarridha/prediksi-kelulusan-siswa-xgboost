@@ -4,6 +4,12 @@ import numpy as np
 import joblib
 import os
 import io
+import base64
+
+def get_bg_base64(path):
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
 
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph
@@ -21,8 +27,24 @@ st.set_page_config("Prediksi Kelulusan Siswa", layout="wide")
 # =====================
 # UI STYLE + ANIMATION
 # =====================
-st.markdown("""
+bg_base64 = get_bg_base64("background.jpg")
+
+st.markdown(f"""
 <style>
+
+/* Background image cinematic */
+.stApp {{
+    background:
+        linear-gradient(rgba(5,10,30,0.75), rgba(5,10,30,0.85)),
+        url("data:image/jpg;base64,{bg_base64}");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #E6C78C;
+}}
+
+</style>
+""", unsafe_allow_html=True)
 
 /* === HAPUS SEMUA PANEL / CARD KOSONG === */
 div[data-testid="stVerticalBlock"]:empty {
@@ -55,16 +77,6 @@ section.main > div:has(> div:empty) {
   0% {transform: translateY(0px);}
   50% {transform: translateY(-6px);}
   100% {transform: translateY(0px);}
-}
-
-.stApp {
-  background: 
-    linear-gradient(rgba(5,10,30,0.75), rgba(5,10,30,0.85)),
-    url("background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #E6C78C;
 }
 
 .main-title {
@@ -330,4 +342,5 @@ Sistem Prediksi Kelulusan Siswa <br>
 Streamlit • XGBoost • 2026
 </div>
 """, unsafe_allow_html=True)
+
 
