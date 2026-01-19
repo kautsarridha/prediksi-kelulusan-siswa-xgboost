@@ -30,6 +30,18 @@ st.markdown("""
   text-align: center;
 }
 
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.center-card {
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+}
+
 /* === HAPUS SEMUA PANEL / CARD KOSONG === */
 div[data-testid="stVerticalBlock"]:empty {
     display: none !important;
@@ -200,7 +212,9 @@ def generate_template_excel():
 # =====================
 # TEMPLATE CARD
 # =====================
+st.markdown('<div class="center-wrapper">', unsafe_allow_html=True)
 st.markdown('<div class="card center-card">', unsafe_allow_html=True)
+
 st.subheader("📥 Download Template Excel")
 st.write("Gunakan template ini agar format sesuai sistem prediksi.")
 
@@ -210,6 +224,8 @@ st.download_button(
     file_name="template_prediksi_kelulusan.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 )
+
+st.markdown('</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
 # =====================
@@ -351,6 +367,7 @@ Sistem Prediksi Kelulusan Siswa <br>
 Streamlit • XGBoost • 2026
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
