@@ -24,37 +24,6 @@ st.set_page_config("Prediksi Kelulusan Siswa", layout="wide")
 st.markdown("""
 <style>
 
-.center-card {
-  max-width: 520px;
-  margin: 0 auto 32px auto;   /* auto kiri-kanan = center */
-  text-align: center;
-}
-
-.center-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.center-card {
-  width: 100%;
-  max-width: 520px;
-  text-align: center;
-}
-
-/* Hilangkan jarak container utama */
-.block-container {
-    padding-top: 2rem !important;
-}
-
-/* Wrapper untuk card tengah */
-.center-wrap {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-
 /* === HAPUS SEMUA PANEL / CARD KOSONG === */
 div[data-testid="stVerticalBlock"]:empty {
     display: none !important;
@@ -87,21 +56,6 @@ section.main > div:has(> div:empty) {
   50% {transform: translateY(-6px);}
   100% {transform: translateY(0px);}
 }
-
-@keyframes staggerFadeUp {
-  0% { opacity:0; transform: translateY(18px) scale(0.98); }
-  100% { opacity:1; transform: translateY(0) scale(1); }
-}
-
-.main-title { animation: staggerFadeUp 0.8s ease-out both; animation-delay:0.1s; }
-.subtitle   { animation: staggerFadeUp 0.8s ease-out both; animation-delay:0.3s; }
-.card       { animation: staggerFadeUp 0.8s ease-out both; animation-delay:0.5s; }
-.metric-card{ animation: staggerFadeUp 0.8s ease-out both; animation-delay:0.7s; }
-
-.card:nth-of-type(1){animation-delay:0.4s;}
-.card:nth-of-type(2){animation-delay:0.6s;}
-.card:nth-of-type(3){animation-delay:0.8s;}
-.card:nth-of-type(4){animation-delay:1.0s;}
 
 .stApp {
   background: radial-gradient(circle at top, #0A1828);
@@ -225,14 +179,7 @@ def generate_template_excel():
 # =====================
 # TEMPLATE CARD
 # =====================
-col1, col2, col3 = st.columns([1,2,1])
-
-with col2:
-    st.markdown("""
-<div class="center-wrap">
-  <div class="card" style="width:420px; text-align:center;">
-""", unsafe_allow_html=True)
-
+st.markdown('<div class="card">', unsafe_allow_html=True)
 st.subheader("📥 Download Template Excel")
 st.write("Gunakan template ini agar format sesuai sistem prediksi.")
 
@@ -242,11 +189,7 @@ st.download_button(
     file_name="template_prediksi_kelulusan.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 )
-
-st.markdown("""
-  </div>
-</div>
-""", unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
 
 # =====================
 # LOAD MODEL
@@ -387,12 +330,5 @@ Sistem Prediksi Kelulusan Siswa <br>
 Streamlit • XGBoost • 2026
 </div>
 """, unsafe_allow_html=True)
-
-
-
-
-
-
-
 
 
