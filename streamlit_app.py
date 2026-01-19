@@ -214,8 +214,6 @@ def generate_template_excel():
 # =====================
 col1, col2, col3 = st.columns([1,2,1])
 
-col1, col2, col3 = st.columns([1,2,1])
-
 with col2:
     st.markdown("""
     <div class="card" style="text-align:center; margin-top: 10px;">
@@ -372,6 +370,7 @@ Sistem Prediksi Kelulusan Siswa <br>
 Streamlit • XGBoost • 2026
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
