@@ -215,7 +215,9 @@ def generate_template_excel():
 col1, col2, col3 = st.columns([1,2,1])
 
 with col2:
-    st.markdown('<div class="card">', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="card" style="text-align:center">
+    """, unsafe_allow_html=True)
 
     st.subheader("📥 Download Template Excel")
     st.write("Gunakan template ini agar format sesuai sistem prediksi.")
@@ -371,6 +373,7 @@ Sistem Prediksi Kelulusan Siswa <br>
 Streamlit • XGBoost • 2026
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
