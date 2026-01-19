@@ -62,7 +62,12 @@ section.main > div:has(> div:empty) {
   color: #BFA181;
 }
 
+.stMarkdown, .stText, .stDataFrame, label, p, span, div {
+    color: #F3E7C3;
+}
+
 .main-title {
+  color: #E6C78C;
   font-size: 46px;
   font-weight: 800;
   animation: fadeIn 1s ease;
@@ -70,7 +75,7 @@ section.main > div:has(> div:empty) {
 }
 
 .subtitle {
-  color:#9ca3af;
+  color:#C9D6E3;
   margin-bottom:30px;
   animation: fadeIn 1.2s ease;
   text-align: center;
@@ -82,7 +87,7 @@ section.main > div:has(> div:empty) {
   border-radius: 18px;
   padding: 26px;
   margin-bottom: 28px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,215,150,0.15);
   box-shadow: 0 0 35px rgba(0,0,0,0.45);
   animation: fadeIn 0.9s ease;
 }
@@ -94,7 +99,7 @@ section.main > div:has(> div:empty) {
 }
 
 .stButton button, .stDownloadButton button {
-  background: linear-gradient(135deg,#2563eb,#4f46e5);
+  background: linear-gradient(135deg,#4F46E5,#4f46e5);
   color: white;
   border-radius: 10px;
   font-weight: 600;
@@ -325,3 +330,4 @@ Sistem Prediksi Kelulusan Siswa <br>
 Streamlit • XGBoost • 2026
 </div>
 """, unsafe_allow_html=True)
+
