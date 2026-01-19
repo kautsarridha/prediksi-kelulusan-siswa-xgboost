@@ -57,6 +57,21 @@ section.main > div:has(> div:empty) {
   100% {transform: translateY(0px);}
 }
 
+@keyframes staggerFadeUp {
+  0% { opacity:0; transform: translateY(18px) scale(0.98); }
+  100% { opacity:1; transform: translateY(0) scale(1); }
+}
+
+.main-title { animation: staggerFadeUp 0.8s ease-out both; animation-delay:0.1s; }
+.subtitle   { animation: staggerFadeUp 0.8s ease-out both; animation-delay:0.3s; }
+.card       { animation: staggerFadeUp 0.8s ease-out both; animation-delay:0.5s; }
+.metric-card{ animation: staggerFadeUp 0.8s ease-out both; animation-delay:0.7s; }
+
+.card:nth-of-type(1){animation-delay:0.4s;}
+.card:nth-of-type(2){animation-delay:0.6s;}
+.card:nth-of-type(3){animation-delay:0.8s;}
+.card:nth-of-type(4){animation-delay:1.0s;}
+
 .stApp {
   background: radial-gradient(circle at top, #0A1828);
   color: #BFA181;
@@ -330,4 +345,5 @@ Sistem Prediksi Kelulusan Siswa <br>
 Streamlit • XGBoost • 2026
 </div>
 """, unsafe_allow_html=True)
+
 
