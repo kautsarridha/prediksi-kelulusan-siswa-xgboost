@@ -58,8 +58,13 @@ section.main > div:has(> div:empty) {
 }
 
 .stApp {
-  background: radial-gradient(circle at top, #0A1828);
-  color: #BFA181;
+  background: 
+    linear-gradient(rgba(5,10,30,0.75), rgba(5,10,30,0.85)),
+    url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #E6C78C;
 }
 
 .main-title {
@@ -325,3 +330,4 @@ Sistem Prediksi Kelulusan Siswa <br>
 Streamlit • XGBoost • 2026
 </div>
 """, unsafe_allow_html=True)
+
