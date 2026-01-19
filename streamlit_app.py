@@ -42,6 +42,19 @@ st.markdown("""
   text-align: center;
 }
 
+/* Hilangkan jarak container utama */
+.block-container {
+    padding-top: 2rem !important;
+}
+
+/* Wrapper untuk card tengah */
+.center-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
 /* === HAPUS SEMUA PANEL / CARD KOSONG === */
 div[data-testid="stVerticalBlock"]:empty {
     display: none !important;
@@ -216,20 +229,24 @@ col1, col2, col3 = st.columns([1,2,1])
 
 with col2:
     st.markdown("""
-    <div class="card" style="text-align:center; margin-top: 10px;">
-    """, unsafe_allow_html=True)
+<div class="center-wrap">
+  <div class="card" style="width:420px; text-align:center;">
+""", unsafe_allow_html=True)
 
-    st.subheader("📥 Download Template Excel")
-    st.write("Gunakan template ini agar format sesuai sistem prediksi.")
+st.subheader("📥 Download Template Excel")
+st.write("Gunakan template ini agar format sesuai sistem prediksi.")
 
-    st.download_button(
-        "📊 Download Template Excel Prediksi",
-        data=generate_template_excel(),
-        file_name="template_prediksi_kelulusan.xlsx",
-        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    )
+st.download_button(
+    "📊 Download Template Excel Prediksi",
+    data=generate_template_excel(),
+    file_name="template_prediksi_kelulusan.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
 
-    st.markdown("</div>", unsafe_allow_html=True)
+st.markdown("""
+  </div>
+</div>
+""", unsafe_allow_html=True)
 
 # =====================
 # LOAD MODEL
@@ -370,6 +387,7 @@ Sistem Prediksi Kelulusan Siswa <br>
 Streamlit • XGBoost • 2026
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
